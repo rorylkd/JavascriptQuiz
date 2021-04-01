@@ -1,0 +1,35 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+text-align: center;
+font-size: larger;
+font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.description {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 3px solid black; 
+
+}
+
+button {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 15px 30px;
+    
+}

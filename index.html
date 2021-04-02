@@ -11,7 +11,7 @@
     <body>
         <header>
             <a>View Highscores</a>
-            <p>Time:</p>
+            <p id="timer">Time:</p>
         </header>
         
         <section id="introSection">
@@ -21,7 +21,7 @@
             </h1>
             <p class="description">
                 Try to answer the following code-related questions within the time limit. 
-                Keep in mind that incorrect answers will penalize your score time by ten seconds!
+                Keep in mind that incorrect answers will penalize your score time by 5 seconds!
             </p>
 
             <div class="startbutton">
@@ -30,13 +30,17 @@
         </section>
 
         <section id="questionSection">
-                    <h2 id="question">Question #</h2>
-                    <ul id="choice">
-                        <li class="choice" id="A"><button onclick="checkAnswer('A')">A</button></li>
-                        <li class="choice" id="B"><button onclick="checkAnswer('B')">B</button></li>
-                        <li class="choice" id="C"><button onclick="checkAnswer('C')">C</button></li>
-                        <li class="choice" id="D"><button onclick="checkAnswer('D')">D</button></li>
-                    </ul>
+                   <div class="question" id="question"></div>
+                   <div id="choices">
+                        <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                        <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                        <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                        <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+                    </div>
+
+                    <div id="timer">
+                        <div id="counter"></div>
+                    </div>
                 
         </section>
 

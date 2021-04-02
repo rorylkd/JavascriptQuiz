@@ -4,9 +4,8 @@
         <meta charset="UTF-8" />
         <title>Javascript Quiz</title>
         <link rel="stylesheet" href="style.css" />
-        <script href="script.js"></script>
+        
     </head>
-   
    
    
     <body>
@@ -16,6 +15,7 @@
         </header>
         
         <section id="introSection">
+                        
             <h1>
                 Coding Quiz Challenge
             </h1>
@@ -25,26 +25,26 @@
             </p>
 
             <div class="startbutton">
-                <button>Start Quiz</button>
+                <button id="startbutton">Start Quiz</button>
             </div>
         </section>
 
         <section id="questionSection">
-                    <h2 id="question#">Question #</h2>
-                    <ul>
-                        <li><button>Answer1</button></li>
-                        <li><button>Answer2</button></li>
-                        <li><button>Answer3</button></li>
-                        <li><button>Answer4</button></li>
+                    <h2 id="question">Question #</h2>
+                    <ul id="choice">
+                        <li class="choice" id="A"><button onclick="checkAnswer('A')">A</button></li>
+                        <li class="choice" id="B"><button onclick="checkAnswer('B')">B</button></li>
+                        <li class="choice" id="C"><button onclick="checkAnswer('C')">C</button></li>
+                        <li class="choice" id="D"><button onclick="checkAnswer('D')">D</button></li>
                     </ul>
                 
         </section>
 
-        <section id="finalscoreSection">
+        <section id="finalSection">
             <p>Your final score is: <span id="score">0</span></p>
                     
-                    <p>Enter Name: <span><input placeholder="Enter name here"/></span>
-                        <button>Submit</button>
+                    <p>Enter Name: <span><input placeholder="Enter name here" id="name"/></span>
+                        <button id="submit-score" class="btn">Submit</button>
                     </p>
         </section>
 
@@ -55,6 +55,6 @@
             </div>
         </section>
 
-       
+        <script src="script.js"></script>  
     </body>
 </html>

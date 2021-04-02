@@ -16,6 +16,7 @@ const choiceC = document.getElementById("C");
 const choiceD = document.getElementById("D");
 
 const timerEl = document.getElementById("timer");
+const scoreEl = document.getElementById("score");
 
 
 // Event listener to start the quiz 
@@ -62,7 +63,8 @@ let questions = [
 
 const lastQuestion = questions.length -1;
 let currentQuestion = 0; 
-let score = 0;
+var score = "0";
+
 
 
 
@@ -82,9 +84,23 @@ function makeQuestion () {
 // Function to check answer...to be written
 
 function checkAnswer(answer) {
-  if(answer == questions[currentQuestion].correct){
-        console.log("GOOD JOB");}
+  if(answer == questions[currentQuestion].correct){ 
+    console.log("GOOD JOB");
+    score++;
+    scoreEl.innerHTML = "<p>"+ score + "<p>";
+
+  }
   else{console.log("YOU'RE DUMB");}
+
+  if(currentQuestion < lastQuestion){
+    currentQuestion++;
+    makeQuestion();
+    }
+  else{
+    finalSectionEl.style.display = "block";
+    questionSectionEl.style.display = "none";
+
+}
   
 
 }

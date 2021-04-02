@@ -66,4 +66,24 @@ header {
     font-family: monospace;
 }
 
+.btn {
+    font-size: 10px;
+    padding: 5px 5px;
+}
+
+#name {
+    font-family: monospace;
+}
+
+#score {
+    display: inline-block;
+    font-family: monospace;
+    margin-top: 10px;
+    
+}
+
+.enter {
+    font-family: monospace;
+}
+
 

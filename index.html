@@ -11,7 +11,7 @@
     <body>
         <header>
             <a>View Highscores</a>
-            <p id="timer">Time:</p>
+            <p>Time: <span id="timer"></span></p>
             <p>Score: <span id="score"></span></p>
         </header>
         
@@ -22,7 +22,7 @@
             </h1>
             <p class="description">
                 Try to answer the following code-related questions within the time limit. 
-                Keep in mind that incorrect answers will penalize your score time by 5 seconds!
+                Keep in mind that incorrect answers will penalize your score time!!
             </p>
 
             <div class="startbutton">
@@ -49,12 +49,9 @@
             <p class="enter">Enter Name: <span><input placeholder="Enter name here" id="name"/></span>
                         <button id="submit-score" class="btn">Submit</button>
                     </p>
-        </section>
 
-        <section id="highscoreSection">
-                <h2>High Score</h2>
-                        <button>Go back</button>
-                </div>
+            <div id="cont">
+                <ul id="list"></ul>
             </div>
         </section>
 

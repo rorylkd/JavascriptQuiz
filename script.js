@@ -7,7 +7,7 @@ const introSectionEl = document.getElementById("introSection");
 const finalSectionEl = document.getElementById("finalSection");
 const nameEl = document.getElementById("name");
 const submitEl = document.getElementById("submit-score");
-const highscoreSectionEl = document.getElementById("highscoreSection");
+
 
 const choices = document.getElementById("choices");
 const choiceA = document.getElementById("A");
@@ -22,6 +22,7 @@ const scoreEl = document.getElementById("score");
 // Event listener to start the quiz 
 
 startbuttonEl.addEventListener("click", startQuiz);
+submitEl.addEventListener("click", scorelist);
 
 // Creating question array
 
@@ -54,7 +55,17 @@ let questions = [
     choiceD:  "shift() method",
     correct: "D"
     
-  }  
+  },
+  
+  { // I was having trouble with getting the timer to stop at the right time, this last element is a shitty workaround. 
+    question: "You've finished the quiz!",
+    choiceA:  "Click anywhere to be taken to the highscore page!",
+    choiceB:  "I'm sure you did great!",
+    choiceC:  "After all...",
+    choiceD:  "It's not a very difficult quiz &#128512;",
+    correct: ""
+    
+  } 
 ];
 
 
@@ -66,6 +77,23 @@ let currentQuestion = 0;
 var score = "0";
 
 
+// TImer 
+
+function timer() {
+  var time = "100";
+  const timerInterval = setInterval(function(){
+    time--; 
+    timerEl.innerHTML = "<p>"+ time + "<p>";
+ 
+   if(!(currentQuestion < lastQuestion)){
+     clearInterval(timerInterval);
+     
+   }
+ 
+ 
+  }, 1000);
+  }
+ 
 
 
 
@@ -81,16 +109,17 @@ function makeQuestion () {
 }
 
 
-// Function to check answer...to be written
+// Function to check answer
 
 function checkAnswer(answer) {
   if(answer == questions[currentQuestion].correct){ 
-    console.log("GOOD JOB");
     score++;
     scoreEl.innerHTML = "<p>"+ score + "<p>";
 
   }
-  else{console.log("YOU'RE DUMB");}
+  else{
+    // wrong(); See note on function below.
+  }
 
   if(currentQuestion < lastQuestion){
     currentQuestion++;
@@ -101,9 +130,14 @@ function checkAnswer(answer) {
     questionSectionEl.style.display = "none";
 
 }
-  
+  }
 
-}
+  function wrong() { //I'm doing something wrong but I've given up
+    var time = time - 5; 
+    timerEl.innerHTML = "<p>"+ time + "<p>";
+  }
+
+
 
 
 
@@ -112,10 +146,24 @@ function checkAnswer(answer) {
 function startQuiz() {
   introSectionEl.style.display = "none";
   questionSectionEl.style.display = "block";
-  console.log("Is this working");
   makeQuestion();
+  timer();
 
 }
+
+
+function scorelist() { //Very shitty scorelist.
+  document.getElementById("list").innerHTML = document.getElementById("name").value + ": " + score
+}
+
+
+
+
+
+
+
+
+
 
 
 
